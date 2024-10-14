@@ -31,7 +31,7 @@ const Katalog = () => {
   return (
     <section id="katalog" className="min-h-screen bg-white px-4 md:px-10 lg:px-20 p-20">
       <h2 className="text-4xl text-center font-semibold text-gray-800">Katalog Produk</h2>
-      <div className="flex flex-wrap justify-center gap-6 mt-6 px-40">
+      <div className="flex flex-wrap justify-center gap-6 mt-6 px-4 md:px-40">
         {produk.map((item, index) => (
           <Card
             key={index}
