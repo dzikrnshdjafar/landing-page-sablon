@@ -1,73 +1,68 @@
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Event listener untuk mendeteksi scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 0); // Jika scroll > 0, ubah state
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up event listener ketika komponen di-unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Fungsi toggle untuk membuka/menutup menu di mobile
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Fungsi untuk scroll halus ke section yang dituju
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+    const element = document.getElementById(target);
+    element.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false); // Tutup menu jika di mobile
+  };
+
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <a href="#home"><h1 className="text-2xl font-bold text-blue-600">MyLanding</h1></a>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a
-                  href="#home"
-                  className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Home
-                </a>
-                <a
-                  href="#katalog"
-                  className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Katalog
-                </a>
-                <a
-                  href="#kontak"
-                  className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Kontak
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="bg-blue-500 p-2 rounded-md text-white focus:outline-none"
-            >
-              <span className="sr-only">Open main menu</span>
-              ☰
-            </button>
-          </div>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+      isScrolled ? 'bg-neutral-800' : 'bg-transparent'
+    } backdrop-blur-lg`}>
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="text-white text-2xl font-bold">
+          <a href="#home" onClick={(e) => handleScroll(e, 'home')}>Brand</a>
+        </div>
+
+        {/* Hamburger Icon (Mobile Only) */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-white text-3xl focus:outline-none"
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* Links (Desktop & Mobile) */}
+        <div
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } md:flex md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent text-white md:flex-row flex-col items-center md:items-center transition-all duration-300 md:transition-none`}
+        >
+          <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Home</a>
+          <a href="#katalog" onClick={(e) => handleScroll(e, 'katalog')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Katalog</a>
+          <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Kontak</a>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#home"
-              className="block text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#katalog"
-              className="block text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium"
-            >
-              Katalog
-            </a>
-            <a
-              href="#kontak"
-              className="block text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-base font-medium"
-            >
-              Kontak
-            </a>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
