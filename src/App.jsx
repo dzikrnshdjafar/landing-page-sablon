@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Katalog from "./components/Katalog";
 import Kontak from "./components/Kontak";
+import SlideInDivs from "./components/Slide";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Home />
       <Katalog />
       <Kontak />
+      <SlideInDivs/>
     </div>
   );
 };

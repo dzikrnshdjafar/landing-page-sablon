@@ -14,10 +14,13 @@ import baju5 from "../assets/baju5.png";
 import baju6 from "../assets/baju6.png";
 import baju7 from "../assets/baju7.png";
 
-import TShirtMarqueeCard from "./TshirtMarqueeCard";
+import TshirtMarquee from "./TshirtMarquee";
+import Coba from "./Coba";
 
 const Katalog = () => {
-  const images = [baju1, baju2, baju3, baju4, baju5, baju6, baju7];
+
+  const katalogs = [test1, test2, test3, test4, test5, test6, test7 ];
+  const images = [baju1, baju2, baju3, baju4, baju5, baju6, baju7 ];
 
   return (
     <section
@@ -30,65 +33,27 @@ const Katalog = () => {
 
       {/* Flexbox container for the images */}
       <div className="flex flex-wrap justify-center gap-6 mt-10">
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
+        {katalogs.map((katalog, index) => (
+        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4" key={index}>
           <img
-            src={test1}
+            src={katalog}
             alt="Produk 1"
             className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
           />
         </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test2}
-            alt="Produk 2"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
-        </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test3}
-            alt="Produk 3"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
-        </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test4}
-            alt="Produk 4"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
-        </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test5}
-            alt="Produk 5"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
-        </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test6}
-            alt="Produk 6"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
-        </div>
-        <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4">
-          <img
-            src={test7}
-            alt="Produk 7"
-            className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl"
-          />
+        )) }
+      </div>
+
+     <div className="mt-10 max-w-8xl h-[30rem] mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="p-6">
+          <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
+            T-Shirt Marquee
+          </h3>
+          <TshirtMarquee images={images} from={0} to={"-100%"} />
+          {/* <Coba images={images} from={0} to={"-100%"} /> */}
         </div>
       </div>
 
-      <div className="flex justify-center py-8 px-4">
-        <TShirtMarqueeCard
-          images={images}
-          title="High Quality Print T-shirts"
-          subtitle="Now Available"
-          buttonText="Shop Now"
-        />
-      </div>
     </section>
   );
 };
