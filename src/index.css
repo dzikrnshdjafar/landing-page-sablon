@@ -3,26 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-.marquee-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%; /* Adjust height as needed */
-}
-
-.marquee-content {
-  display: flex;
-  width: max-content;
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%); /* Move halfway to allow smooth looping */
-  }
-}

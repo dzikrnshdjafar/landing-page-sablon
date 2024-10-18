@@ -35,10 +35,10 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
       isScrolled ? 'bg-neutral-800' : 'bg-transparent'
-    } backdrop-blur-lg`}>
+    } backdrop-blur-none`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-white text-2xl font-bold">
+        <div className="text-white text-3xl font-bold">
           <a href="#home" onClick={(e) => handleScroll(e, 'home')}>Brand</a>
         </div>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
         <div
           className={`${
             isOpen ? 'block' : 'hidden'
-          } md:flex md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent text-white md:flex-row flex-col items-center md:items-center transition-all duration-300 md:transition-none`}
+          } md:flex md:space-x-6 text-lg absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent text-white md:flex-row flex-col items-center md:items-center transition-all duration-300 md:transition-none`}
         >
           <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Home</a>
           <a href="#katalog" onClick={(e) => handleScroll(e, 'katalog')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Katalog</a>
