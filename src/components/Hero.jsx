@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
-import bgImage from "../assets/bgImage.png"; // ganti dengan path gambar yang benar
-import BgSplash from "./BgSplash";
+import bgImage from "../assets/bgImage.png"; 
 
 const Hero = () => {
   const text = "Lorem Ipsum";
   const typingEffect = {
-    hidden: { opacity: 0, y: 100 }, // Mulai dari bawah (y: 100)
+    hidden: { opacity: 0, y: 100 },
     visible: (i) => ({
       opacity: 1,
-      y: 0, // Animasi ke posisi normal
+      y: 0,
       transition: {
-        delay: i * 0.1, // Delay untuk setiap huruf
+        delay: i * 0.1,
         type: "spring",
-        stiffness: 60, // Efek spring lebih smooth
-        damping: 15, // Efek bouncing
+        stiffness: 60,
+        damping: 15,
       },
     }),
   };
@@ -22,66 +21,58 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative flex flex-row items-center justify-center w-full space-x-8 text-slate-100 bg-neutral-900"
-        style={{ height: "50rem" }} // Atur tinggi section
-        >
-
+        className="relative flex items-center justify-center w-full text-slate-100 bg-neutral-900 desktop:py-64 hp:py-20 laptop:px-12 "
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black opacity-75"></div>
+        
         {/* Content Container */}
-        <div className="flex flex-col items-center justify-center space-y-4 z-10">
-          <motion.div className="space-x-4">
-            {/* Animated H1 */}
-            <motion.h1 className="text-8xl font-bold ">
-              {text.split("").map((letter, index) => (
-                <motion.span
+        <div className="flex flex-col items-start justify-start z-10 space-y-6 pt-12">
+          {/* Animated H1 */}
+          <motion.h1 className="text-5xl hp:text-3xl tablet:text-6xl laptop:text-8xl font-bold">
+            {text.split("").map((letter, index) => (
+              <motion.span
                 key={index}
                 custom={index}
                 variants={typingEffect}
                 initial="hidden"
                 animate="visible"
                 className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.h1>
-
-            {/* H3 Description */}
-            <motion.h3
-              className="text-2xl w-[50rem]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }} // Delay untuk animasi h3
               >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, cupiditate! Iste non temporibus molestias aperiam repellendus illum eius earum molestiae doloribus vel at pariatur.
-            </motion.h3>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h1>
 
-            {/* Button */}
-            <motion.button
-              className="mt-4 px-6 py-3 bg-orange-500 text-white text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }} // Delay untuk animasi button
-              >
-              Shop Now
-            </motion.button>
-          </motion.div>
-        </div>
-
-        {/* Background Image Container */}
-        <div
-          className="relative bg-cover bg-center mx-auto rounded-3xl -mt-20 w-1/3 h-1/2"
-          style={{
-            backgroundImage: `url(${bgImage})`, // Menggunakan background image
-          }}
+          {/* H3 Description */}
+          <motion.h3
+            className="text-lg hp:w-[20rem] tablet:w-[40rem] laptop:w-[50rem]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
           >
-          {/* Overlay to darken the image for better text contrast */}
-          <div className="absolute inset-0 bg-black opacity-75 rounded-3xl"></div>
-        
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, cupiditate! Iste non temporibus molestias aperiam repellendus illum eius earum molestiae doloribus vel at pariatur.
+          </motion.h3>
+
+          {/* Button */}
+          <motion.button
+            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-orange-500 text-white text-sm tablet:text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            Shop Now
+          </motion.button>
         </div>
       </section>
 
       <div className="bg-orange-400 text-center py-2">
-        <h1 className="font-bold lg:text-3xl hp:text-lg">
+        <h1 className="font-bold text-lg tablet:text-2xl laptop:text-3xl">
           UP TO 30% OFF EVERY TIME
         </h1>
       </div>
