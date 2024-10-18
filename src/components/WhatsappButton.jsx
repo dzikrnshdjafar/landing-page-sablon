@@ -9,7 +9,7 @@ const WhatsappButton = () => {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-40"
+        className="fixed bottom-4 right-4 p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-40 drop-shadow-2xl"
         style={{ background: "linear-gradient(135deg, #57d163 0%, #23b33a 100%)" }}
       >
         <svg

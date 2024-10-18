@@ -5,17 +5,19 @@ import Kontak from "./components/Kontak";
 import SlideInDivs from "./components/Slide";
 import TshirtMarquee from "./components/TshirtMarquee";
 import WhatsappButton from "./components/WhatsappButton";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden relative">
+    <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <Katalog />
-      <TshirtMarquee/>
-      <Kontak />
       <SlideInDivs/>
+      <Katalog />
+      {/* <TshirtMarquee/> */}
+      <Kontak />
       <WhatsappButton/>
+      <Footer/>
     </div>
   );
 };

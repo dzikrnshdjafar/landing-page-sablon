@@ -1,15 +1,87 @@
-const Kontak = () => {
-    return (
-      <section
-        id="kontak"
-        className="h-screen flex items-center justify-center bg-gray-200"
-      >
-        <h2 className="text-4xl font-semibold text-gray-800">Kontak Kami</h2>
+import { motion } from "framer-motion";
 
-        
-      </section>
-    );
+const Kontak = () => {
+  const formVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0.2 },
+    },
   };
-  
-  export default Kontak;
-  
+
+  return (
+    <section
+      id="kontak"
+      className="h-screen flex flex-col items-center justify-center bg-gray-200"
+    >
+      {/* Judul Section */}
+      <motion.h2
+        className="text-4xl font-semibold text-gray-800 mb-8"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 50, duration: 1 }}
+      >
+        Kontak Kami
+      </motion.h2>
+
+      {/* Formulir Kontak */}
+      <motion.form
+        className="bg-white shadow-md rounded-lg p-8 w-[90%] max-w-[600px] space-y-6"
+        variants={formVariant}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Nama */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 font-medium mb-2" htmlFor="name">
+            Nama
+          </label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Masukkan nama Anda"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
+        {/* Email */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 font-medium mb-2" htmlFor="email">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Masukkan email Anda"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
+        {/* Pesan */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 font-medium mb-2" htmlFor="message">
+            Pesan
+          </label>
+          <textarea
+            id="message"
+            placeholder="Tulis pesan Anda di sini"
+            className="border border-gray-300 rounded-md p-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-orange-500"
+          ></textarea>
+        </div>
+
+        {/* Tombol Kirim */}
+        <motion.button
+          type="submit"
+          className="w-full bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600 transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Kirim Pesan
+        </motion.button>
+      </motion.form>
+    </section>
+  );
+};
+
+export default Kontak;

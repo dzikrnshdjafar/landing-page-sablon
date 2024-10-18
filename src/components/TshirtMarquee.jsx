@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import baju1 from "../assets/baju1.png";
-import baju2 from "../assets/baju2.png";
-import baju3 from "../assets/baju3.png";
-import baju4 from "../assets/baju4.png";
-import baju5 from "../assets/baju5.png";
-import baju6 from "../assets/baju6.png";
-import baju7 from "../assets/baju7.png";
+import baju1 from "../assets/baju/baju1.png";
+import baju2 from "../assets/baju/baju2.png";
+import baju3 from "../assets/baju/baju3.png";
+import baju4 from "../assets/baju/baju4.png";
+import baju5 from "../assets/baju/baju5.png";
+import baju6 from "../assets/baju/baju6.png";
+import baju7 from "../assets/baju/baju7.png";
 
 const images = [baju1, baju2, baju3, baju4, baju5, baju6, baju7 ];
 

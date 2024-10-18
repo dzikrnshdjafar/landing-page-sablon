@@ -1,93 +1,142 @@
-import { delay, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Card from "./Card";
+import div1 from "../assets/benefit/div1.png";
+import div2 from "../assets/benefit/div2.png";
+import div3 from "../assets/benefit/div3.png";
+import div4 from "../assets/benefit/div4.png";
 
 const SlideInDivs = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animasi hanya dipicu sekali
+  // Menggunakan referensi terpisah untuk tiap div
+  const refDivOne = useRef(null);
+  const refDivTwo = useRef(null);
+  const refDivThree = useRef(null);
+  const refDivFour = useRef(null);
 
-  const delayAll= 0.2
+  // Setiap elemen memiliki `useInView` terpisah
+  const isInViewDivOne = useInView(refDivOne, { once: true, threshold: 0, rootMargin: "-50px" });
+  const isInViewDivTwo = useInView(refDivTwo, { once: true, threshold: 0, rootMargin: "-50px" });
+  const isInViewDivThree = useInView(refDivThree, { once: true, threshold: 0, rootMargin: "-50px" });
+  const isInViewDivFour = useInView(refDivFour, { once: true, threshold: 0, rootMargin: "-50px" });
+
 
   const divOne = {
-    hidden: { x: "-100vw" }, // Muncul dari kiri
+    hidden: { 
+      x: "-60vw", 
+      opacity: 0,       // Elemen tersembunyi (transparan)
+      visibility: "hidden"  // Elemen tidak terlihat sebelum animasi
+    },
     visible: {
-      x: isInView ? -500 : "-100vw", // Hanya bergerak ketika div terlihat
-      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0   + delayAll},
+      x: 0, 
+      opacity: 1,       // Elemen terlihat saat animasi dimulai
+      visibility: "visible", // Elemen terlihat
+      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0 },
     },
   };
   
   const divTwo = {
-    hidden: { x: "100vw" }, // Muncul dari kanan
+    hidden: { 
+      x: "60vw", 
+      opacity: 0,        // Elemen tersembunyi (transparan)
+      visibility: "hidden"  // Elemen tidak terlihat sebelum animasi
+    },
     visible: {
-      x: isInView ? 500 : "100vw", // Hanya bergerak ketika div terlihat
-      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0.3 + delayAll }, // Delay 0.5 detik
+      x: 0, 
+      opacity: 1,       // Elemen terlihat saat animasi dimulai
+      visibility: "visible",  // Elemen terlihat
+      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0 },
     },
   };
   
-  const divTree = {
-    hidden: { x: "-100vw" }, // Muncul dari kiri
+  const divThree = {
+    hidden: { 
+      x: "-60vw", 
+      opacity: 0,        // Elemen tersembunyi (transparan)
+      visibility: "hidden"  // Elemen tidak terlihat sebelum animasi
+    },
     visible: {
-      x: isInView ? -500 : "-100vw", // Hanya bergerak ketika div terlihat
-      transition: { type: "spring", stiffness: 50, duration: 1, delay:0.6  + delayAll},
+      x: 0, 
+      opacity: 1,       // Elemen terlihat saat animasi dimulai
+      visibility: "visible",  // Elemen terlihat
+      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0 },
     },
   };
-
+  
   const divFour = {
-    hidden: { x: "100vw" }, // Muncul dari kanan
+    hidden: { 
+      x: "60vw", 
+      opacity: 0,        // Elemen tersembunyi (transparan)
+      visibility: "hidden"  // Elemen tidak terlihat sebelum animasi
+    },
     visible: {
-      x: isInView ? 500 : "100vw", // Hanya bergerak ketika div terlihat
-      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0.9 + delayAll }, // Delay 0.5 detik
+      x: 0, 
+      opacity: 1,       // Elemen terlihat saat animasi dimulai
+      visibility: "visible",  // Elemen terlihat
+      transition: { type: "spring", stiffness: 50, duration: 1, delay: 0 },
     },
   };
+  
+  
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center h-screen space-y-10">
-      {/* Div atas muncul dari kiri dengan Card */}
+    <div className="flex flex-col items-center justify-center h-min-screen space-y-6 tablet:space-y-10 bg-neutral-900 text-slate-100">
+      {/* Card Satu: Gambar di kiri, teks di kanan */}
       <motion.div
-        className="w-1/4 h-48"
+        ref={refDivOne}
+        className="hp:w-full tablet:w-1/2 laptop:w-1/3 ultrawide:w-1/4 h-64 flex flex-row "
         variants={divOne}
         initial="hidden"
-        animate="visible"
+        animate={isInViewDivOne ? "visible" : "hidden"}
       >
-        <Card
-          title="Card Satu"
-          description="Ini adalah deskripsi untuk card di atas."
-        />
+        <img src={div1} alt="Gambar Card Satu" className="w-1/2 h-full object-cover" />
+        <div className="w-1/2 py-20 flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Card Satu</h3>
+          <p>Ini adalah deskripsi untuk card di atas.</p>
+        </div>
       </motion.div>
 
-      {/* Div bawah muncul dari kanan dengan Card dan delay */}
+      {/* Card Dua: Gambar di kanan, teks di kiri */}
       <motion.div
-        className="w-1/4 h-48"
+        ref={refDivTwo}
+        className="hp:w-full tablet:w-1/2 laptop:w-1/3 ultrawide:w-1/4 h-64 flex flex-row-reverse"
         variants={divTwo}
         initial="hidden"
-        animate="visible"
+        animate={isInViewDivTwo ? "visible" : "hidden"} // Hanya mulai ketika divTwo terlihat
       >
-        <Card
-          title="Card Dua"
-          description="Ini adalah deskripsi untuk card di bawah."
-        />
+        <img src={div2} alt="Gambar Card Dua" className="w-1/2 h-full object-cover" />
+        <div className="w-1/2 p-4 flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Card Dua</h3>
+          <p>Ini adalah deskripsi untuk card di bawah.</p>
+        </div>
       </motion.div>
+
+      {/* Card Tiga: Gambar di kiri, teks di kanan */}
       <motion.div
-        className="w-1/4 h-48"
-        variants={divTree}
+        ref={refDivThree}
+        className="hp:w-full tablet:w-1/2 laptop:w-1/3 ultrawide:w-1/4 h-64  flex flex-row"
+        variants={divThree}
         initial="hidden"
-        animate="visible"
+        animate={isInViewDivThree ? "visible" : "hidden"} // Hanya mulai ketika divThree terlihat
       >
-        <Card
-          title="Card Tiga"
-          description="Ini adalah deskripsi untuk card di bawah."
-        />
+        <img src={div3} alt="Gambar Card Tiga" className="w-1/2 h-full object-cover" />
+        <div className="w-1/2 p-4 flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Card Tiga</h3>
+          <p>Ini adalah deskripsi untuk card di bawah.</p>
+        </div>
       </motion.div>
+
+      {/* Card Empat: Gambar di kanan, teks di kiri */}
       <motion.div
-        className="w-1/4 h-48"
+        ref={refDivFour}
+        className="hp:w-full tablet:w-1/2 laptop:w-1/3 ultrawide:w-1/4 h-64 flex flex-row-reverse"
         variants={divFour}
         initial="hidden"
-        animate="visible"
+        animate={isInViewDivFour ? "visible" : "hidden"} // Hanya mulai ketika divFour terlihat
       >
-        <Card
-          title="Card Empat"
-          description="Ini adalah deskripsi untuk card di bawah."
-        />
+        <img src={div4} alt="Gambar Card Empat" className="w-1/2 h-full object-cover" />
+        <div className="w-1/2 p-4 flex flex-col justify-center">
+          <h3 className="text-lg font-bold">Card Empat</h3>
+          <p>Ini adalah deskripsi untuk card di bawah.</p>
+        </div>
       </motion.div>
     </div>
   );
