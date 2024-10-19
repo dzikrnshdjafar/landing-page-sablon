@@ -54,14 +54,16 @@ const Navbar = () => {
 
         {/* Links (Desktop & Mobile) */}
         <div
-          className={`${
-            isOpen ? 'block' : 'hidden'
-          } md:flex md:space-x-6 text-lg absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent text-white md:flex-row flex-col items-center md:items-center transition-all duration-300 md:transition-none`}
-        >
-          <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Home</a>
-          <a href="#katalog" onClick={(e) => handleScroll(e, 'katalog')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Katalog</a>
-          <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="py-2 px-4 md:py-0 hover:text-gray-300 transition">Kontak</a>
-        </div>
+  className={`${
+    isOpen ? 'flex' : 'hidden'
+  } flex-col md:flex md:flex-row md:space-x-6 text-lg absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent text-white items-center transition-all duration-300 md:transition-none`}
+>
+  <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="py-2 px-4 hover:text-gray-300 transition">Home</a>
+  <a href="#benefit" onClick={(e) => handleScroll(e, 'benefit')} className="py-2 px-4 hover:text-gray-300 transition">Benefit</a>
+  <a href="#katalog" onClick={(e) => handleScroll(e, 'katalog')} className="py-2 px-4 hover:text-gray-300 transition">Katalog</a>
+  <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="py-2 px-4 hover:text-gray-300 transition">Kontak</a>
+</div>
+
       </div>
     </nav>
   );

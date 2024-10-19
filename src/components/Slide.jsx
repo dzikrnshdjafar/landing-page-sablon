@@ -78,7 +78,12 @@ const SlideInDivs = () => {
   
 
   return (
+    <section id="benefit">
     <div className="flex flex-col items-center justify-center h-min-screen space-y-6 tablet:space-y-10 bg-neutral-900 text-slate-100 overflow-x-hidden">
+      <h2 className="text-4xl mt-10 text-center font-semibold text-slate-200 z-20">
+        Benefit
+        
+      </h2>
       {/* Card Satu: Gambar di kiri, teks di kanan */}
       <motion.div
         ref={refDivOne}
@@ -86,7 +91,7 @@ const SlideInDivs = () => {
         variants={divOne}
         initial="hidden"
         animate={isInViewDivOne ? "visible" : "hidden"}
-      >
+        >
         <img src={div1} alt="Gambar Card Satu" className="w-1/2 h-full object-cover" />
         <div className="w-1/2 py-20 flex flex-col justify-center">
           <h3 className="text-lg font-bold">Card Satu</h3>
@@ -101,7 +106,7 @@ const SlideInDivs = () => {
         variants={divTwo}
         initial="hidden"
         animate={isInViewDivTwo ? "visible" : "hidden"} // Hanya mulai ketika divTwo terlihat
-      >
+        >
         <img src={div2} alt="Gambar Card Dua" className="w-1/2 h-full object-cover" />
         <div className="w-1/2 p-4 flex flex-col justify-center">
           <h3 className="text-lg font-bold">Card Dua</h3>
@@ -116,7 +121,7 @@ const SlideInDivs = () => {
         variants={divThree}
         initial="hidden"
         animate={isInViewDivThree ? "visible" : "hidden"} // Hanya mulai ketika divThree terlihat
-      >
+        >
         <img src={div3} alt="Gambar Card Tiga" className="w-1/2 h-full object-cover" />
         <div className="w-1/2 p-4 flex flex-col justify-center">
           <h3 className="text-lg font-bold">Card Tiga</h3>
@@ -131,7 +136,7 @@ const SlideInDivs = () => {
         variants={divFour}
         initial="hidden"
         animate={isInViewDivFour ? "visible" : "hidden"} // Hanya mulai ketika divFour terlihat
-      >
+        >
         <img src={div4} alt="Gambar Card Empat" className="w-1/2 h-full object-cover" />
         <div className="w-1/2 p-4 flex flex-col justify-center">
           <h3 className="text-lg font-bold">Card Empat</h3>
@@ -139,6 +144,7 @@ const SlideInDivs = () => {
         </div>
       </motion.div>
     </div>
+        </section>
   );
 };
 

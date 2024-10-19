@@ -4,6 +4,8 @@ import bgImage1 from "../assets/bgimage1.png";
 import bgImage2 from "../assets/bgimage2.jpeg";
 import bgImage3 from "../assets/bgimage3.jpeg";
 
+import Cat from "../assets/cat.svg"
+
 const bgImages = [bgImage1, bgImage2, bgImage3];
 
 const Hero = () => {
@@ -107,7 +109,8 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="bg-orange-400 text-center py-2">
+      <img src={Cat} alt="Benefit" className="absolute desktop:mt-0 laptop:mt-0 tablet:mt-1 hp:mt-5"/>
+      <div className="bg-orange-400 text-center py-2 relative">
         <h1 className="font-bold text-lg tablet:text-2xl laptop:text-3xl">
           UP TO 30% OFF EVERY TIME
         </h1>

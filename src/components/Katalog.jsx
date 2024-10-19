@@ -48,7 +48,7 @@ const Katalog = () => {
             <img
               src={katalog}
               alt={`Produk ${index + 1}`}
-              className="object-cover w-full h-auto hp:max-h-20 lg:max-h-80 max-w-xs rounded-xl cursor-pointer"
+              className="object-cover w-full h-auto hp:max-h-20 md:max-h-64 lg:max-h-80 max-w-xs rounded-xl cursor-pointer"
               onClick={() => openModal(katalog)} // Membuka modal saat gambar diklik
             />
           </div>
@@ -73,6 +73,7 @@ const Katalog = () => {
               alt="Preview"
               className="max-w-full max-h-full rounded-lg"
             />
+          
           </div>
         </div>
       )}

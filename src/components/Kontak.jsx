@@ -13,11 +13,12 @@ const Kontak = () => {
   return (
     <section
       id="kontak"
-      className="h-screen flex flex-col items-center justify-center bg-gray-200"
+      className="h-screen flex flex-col items-center justify-center bg-gray-200 relative"
     >
+      
       {/* Judul Section */}
       <motion.h2
-        className="text-4xl font-semibold text-gray-800 mb-8"
+        className="text-4xl font-bold text-orange-500 mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 50, duration: 1 }}
