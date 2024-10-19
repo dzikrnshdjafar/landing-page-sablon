@@ -1,11 +1,26 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import bgImage from "../assets/bgImage.png";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import bgImage1 from "../assets/bgimage1.png";
+import bgImage2 from "../assets/bgimage2.jpeg";
+import bgImage3 from "../assets/bgimage3.jpeg";
+
+const bgImages = [bgImage1, bgImage2, bgImage3];
 
 const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animasi hanya dipicu sekali saat masuk viewport
+  const isInView = useInView(ref, { once: true });
   const text = "Lorem Ipsum";
+
+  // State untuk track image index
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Mengubah image setiap 5 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % bgImages.length);
+    }, 5000); // Ubah gambar setiap 5 detik
+    return () => clearInterval(interval); // Bersihkan interval saat komponen di-unmount
+  }, []);
 
   const typingEffect = {
     hidden: { opacity: 0, y: 100 },
@@ -26,13 +41,25 @@ const Hero = () => {
       <section
         ref={ref}
         id="home"
-        className="relative flex items-center justify-center w-full text-slate-100 bg-neutral-900 desktop:py-64 hp:py-20 laptop:px-12 "
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="relative flex items-center justify-center w-full text-slate-100 bg-neutral-900 desktop:py-64 hp:py-20 laptop:px-12"
       >
+        {/* Background Image Container */}
+        <AnimatePresence>
+          <motion.div
+            key={currentImage}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${bgImages[currentImage]})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </AnimatePresence>
+
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-black opacity-75"></div>
 
@@ -42,7 +69,7 @@ const Hero = () => {
           <motion.h1
             className="text-5xl hp:text-3xl tablet:text-6xl laptop:text-8xl font-bold"
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"} // Animasi dipicu saat in-view
+            animate={isInView ? "visible" : "hidden"}
           >
             {text.split("").map((letter, index) => (
               <motion.span
@@ -60,17 +87,19 @@ const Hero = () => {
           <motion.h3
             className="text-lg hp:w-[20rem] tablet:w-[40rem] laptop:w-[50rem]"
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }} // Animasi dipicu saat in-view
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 1 }}
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, cupiditate! Iste non temporibus molestias aperiam repellendus illum eius earum molestiae doloribus vel at pariatur.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,
+            cupiditate! Iste non temporibus molestias aperiam repellendus illum
+            eius earum molestiae doloribus vel at pariatur.
           </motion.h3>
 
           {/* Button */}
           <motion.button
             className="px-4 py-2 tablet:px-6 tablet:py-3 bg-orange-500 text-white text-sm tablet:text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} // Animasi dipicu saat in-view
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1 }}
           >
             Shop Now

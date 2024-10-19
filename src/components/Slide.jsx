@@ -78,7 +78,7 @@ const SlideInDivs = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center h-min-screen space-y-6 tablet:space-y-10 bg-neutral-900 text-slate-100">
+    <div className="flex flex-col items-center justify-center h-min-screen space-y-6 tablet:space-y-10 bg-neutral-900 text-slate-100 overflow-x-hidden">
       {/* Card Satu: Gambar di kiri, teks di kanan */}
       <motion.div
         ref={refDivOne}
