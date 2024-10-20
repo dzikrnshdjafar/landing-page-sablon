@@ -79,6 +79,7 @@ const Katalog = () => {
               alt={`Produk ${index + 1}`}
               className="object-cover w-full h-auto hp:max-h-20 md:max-h-64 lg:max-h-80 max-w-xs rounded-xl cursor-pointer"
               onClick={() => openModal(katalog)} // Membuka modal saat gambar diklik
+              loading="lazy" // Menambahkan lazy loading
             />
           </div>
         ))}
