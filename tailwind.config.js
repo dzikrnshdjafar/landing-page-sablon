@@ -16,7 +16,15 @@ export default {
       'desktop': '1280px',
       'ultrawide': '1620px'
     },
+    colors: {
+      'primary': '#171717',
+      'secondary': '#f5d0fe',
+      'sechov': '#f0abfc'
+    },
   },
   },
   plugins: [],
+  corePlugins: {
+    fill: true, // Aktifkan utilitas fill
+  },
 }

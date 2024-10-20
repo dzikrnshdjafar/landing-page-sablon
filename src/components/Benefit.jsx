@@ -5,7 +5,7 @@ import div2 from "../assets/benefit/div2.png";
 import div3 from "../assets/benefit/div3.png";
 import div4 from "../assets/benefit/div4.png";
 
-const SlideInDivs = () => {
+const Benefit = () => {
   // Menggunakan array untuk referensi dan gambar div
   const refs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const images = [div1, div2, div3, div4];
@@ -28,16 +28,16 @@ const SlideInDivs = () => {
 
   // Data card untuk loop dinamis
   const cardData = [
-    { id: 1, title: "Card Satu", description: "Ini adalah deskripsi untuk card di atas.", direction: "left" },
-    { id: 2, title: "Card Dua", description: "Ini adalah deskripsi untuk card di bawah.", direction: "right" },
-    { id: 3, title: "Card Tiga", description: "Ini adalah deskripsi untuk card di bawah.", direction: "left" },
-    { id: 4, title: "Card Empat", description: "Ini adalah deskripsi untuk card di bawah.", direction: "right" },
+    { id: 1, title: "Hello Card ", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", direction: "left" },
+    { id: 2, title: "Hello Card ", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", direction: "right" },
+    { id: 3, title: "Hello Card ", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", direction: "left" },
+    { id: 4, title: "Hello Card ", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", direction: "right" },
   ];
 
   return (
-    <section id="benefit">
-      <div className="flex flex-col items-center justify-center h-min-screen space-y-6 tablet:space-y-10 bg-neutral-900 text-slate-100 overflow-x-hidden">
-        <h2 className="text-4xl mt-10 text-center font-semibold text-slate-200 z-20">Benefit</h2>
+
+      <section id="benefit" className="lg:py-40 hp:py-20 flex flex-col items-center justify-center h-min-screen bg-neutral-900 text-slate-100 overflow-x-hidden">
+        <h2 className="text-4xl text-center font-semibold text-slate-200 z-20">Benefit</h2>
 
         {cardData.map((card, index) => (
           <motion.div
@@ -59,9 +59,8 @@ const SlideInDivs = () => {
         
         
         ))}
-      </div>
-    </section>
+      </section>
   );
 };
 
-export default SlideInDivs;
+export default Benefit;

@@ -105,7 +105,7 @@ const Hero = () => {
 
           {/* Button */}
           <motion.a
-            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-orange-400 text-white text-sm tablet:text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
+            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-secondary text-neutral-900 text-sm tablet:text-lg font-semibold rounded-md hover:bg-sechov transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1 }}
@@ -117,7 +117,7 @@ const Hero = () => {
       </section>
 
       <img src={Cat} alt="Benefit" className="absolute desktop:mt-0 laptop:mt-0 tablet:mt-1 hp:mt-5"/>
-      <div className="bg-orange-400 text-center py-2 relative">
+      <div className="bg-secondary text-center py-2 relative">
         <h1 className="font-bold text-lg tablet:text-2xl laptop:text-3xl">
           UP TO 30% OFF EVERY TIME
         </h1>

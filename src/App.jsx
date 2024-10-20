@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Katalog from "./components/Katalog";
 import Kontak from "./components/Kontak";
-import SlideInDivs from "./components/Slide";
+import Benefit from "./components/Benefit";
 import TshirtMarquee from "./components/TshirtMarquee";
 import WhatsappButton from "./components/WhatsappButton";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ const App = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <SlideInDivs/>
+      <Benefit/>
       <Katalog />
       {/* <TshirtMarquee/> */}
       <Kontak />

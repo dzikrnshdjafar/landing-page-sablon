@@ -18,7 +18,7 @@ const Kontak = () => {
       
       {/* Judul Section */}
       <motion.h2
-        className="text-4xl font-bold text-orange-500 mb-8"
+        className="text-4xl font-bold text-Neutral-900 mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 50, duration: 1 }}
@@ -42,7 +42,7 @@ const Kontak = () => {
             id="name"
             type="text"
             placeholder="Masukkan nama Anda"
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-200"
           />
         </div>
 
@@ -55,7 +55,7 @@ const Kontak = () => {
             id="email"
             type="email"
             placeholder="Masukkan email Anda"
-            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-200"
           />
         </div>
 
@@ -67,14 +67,14 @@ const Kontak = () => {
           <textarea
             id="message"
             placeholder="Tulis pesan Anda di sini"
-            className="border border-gray-300 rounded-md p-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="border border-gray-300 rounded-md p-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-fuchsia-200"
           ></textarea>
         </div>
 
         {/* Tombol Kirim */}
         <motion.button
           type="submit"
-          className="w-full bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600 transition-colors"
+          className="w-full bg-secondary text-neutral-900 font-semibold py-2 rounded-md hover:bg-sechov transition-colors"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

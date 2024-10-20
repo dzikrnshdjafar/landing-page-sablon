@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Splash from "../assets/splash.png";
+import Splash from "../assets/splash.svg";
 import kaos1 from "../assets/kaos/kaos1.jpg";
 import kaos2 from "../assets/kaos/kaos2.jpg";
 import kaos3 from "../assets/kaos/kaos3.jpg";
@@ -10,10 +10,11 @@ import kaos7 from "../assets/kaos/kaos7.jpg";
 import kaos8 from "../assets/kaos/kaos8.jpg";
 import kaos9 from "../assets/kaos/kaos9.jpg";
 import kaos10 from "../assets/kaos/kaos10.jpg";
-// import kaos11 from "../assets/kaos/kaos11jpng";
+
+import bgKatalog from "../assets/bgkatalog.png"
 
 const Katalog = () => {
-  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos8, kaos9, kaos10 ];
+  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos9, kaos10 ];
   
   // State untuk mengontrol modal dan gambar yang sedang di-preview
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +91,7 @@ const Katalog = () => {
         <button
           onClick={goToPreviousPage}
           disabled={currentPage === 1}
-          className="px-4 py-2 bg-slate-700 text-white rounded disabled:opacity-50"
+          className="px-4 py-2 bg-secondary text-primary rounded-xl disabled:opacity-50"
         >
           Previous
         </button>
@@ -98,7 +99,7 @@ const Katalog = () => {
         <button
           onClick={goToNextPage}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-slate-700 text-white rounded disabled:opacity-50"
+          className="px-4 py-2 bg-secondary text-primary rounded-xl disabled:opacity-50"
         >
           Next
         </button>
