@@ -1,19 +1,35 @@
 import React, { useState } from "react";
 import Splash from "../assets/splash.png";
-import test1 from "../assets/katalog/test1.png";
-import test2 from "../assets/katalog/test2.png";
-import test3 from "../assets/katalog/test3.png";
-import test4 from "../assets/katalog/test4.png";
-import test5 from "../assets/katalog/test5.png";
-import test6 from "../assets/katalog/test6.png";
-import test7 from "../assets/katalog/test7.png";
+import kaos1 from "../assets/kaos/kaos1.png";
+import kaos2 from "../assets/kaos/kaos2.png";
+import kaos3 from "../assets/kaos/kaos3.png";
+import kaos4 from "../assets/kaos/kaos4.png";
+import kaos5 from "../assets/kaos/kaos5.png";
+import kaos6 from "../assets/kaos/kaos6.png";
+import kaos7 from "../assets/kaos/kaos7.png";
+import kaos8 from "../assets/kaos/kaos8.png";
+import kaos9 from "../assets/kaos/kaos9.png";
+import kaos10 from "../assets/kaos/kaos10.png";
+import kaos11 from "../assets/kaos/kaos11.png";
 
 const Katalog = () => {
-  const katalogs = [test1, test2, test3, test4, test5, test6, test7];
-
+  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos9, kaos10, kaos11];
+  
   // State untuk mengontrol modal dan gambar yang sedang di-preview
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  // Menghitung index dari item yang akan ditampilkan pada halaman yang aktif
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = katalogs.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Menghitung jumlah halaman
+  const totalPages = Math.ceil(katalogs.length / itemsPerPage);
 
   const openModal = (image) => {
     setCurrentImage(image);
@@ -25,10 +41,23 @@ const Katalog = () => {
     setCurrentImage(null);
   };
 
+  // Fungsi untuk mengubah halaman
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <section
       id="katalog"
-      className="relative px-4 md:px-10 lg:px-20 py-10 bg-neutral-900 overflow-hidden"
+      className="relative px-4 md:px-10 lg:px-20 py-20 bg-neutral-900 overflow-hidden"
     >
       {/* Gambar Splash */}
       <img
@@ -43,7 +72,7 @@ const Katalog = () => {
       </h2>
 
       <div className="flex flex-wrap justify-center gap-6 mt-10">
-        {katalogs.map((katalog, index) => (
+        {currentItems.map((katalog, index) => (
           <div className="w-full hp:w-1/4 md:w-1/3 lg:w-1/4" key={index}>
             <img
               src={katalog}
@@ -53,6 +82,25 @@ const Katalog = () => {
             />
           </div>
         ))}
+      </div>
+
+      {/* Pagination Controls */}
+      <div className="flex justify-center items-center gap-4 mt-8">
+        <button
+          onClick={goToPreviousPage}
+          disabled={currentPage === 1}
+          className="px-4 py-2 bg-slate-700 text-white rounded disabled:opacity-50"
+        >
+          Previous
+        </button>
+        <span className="text-slate-200">{`Page ${currentPage} of ${totalPages}`}</span>
+        <button
+          onClick={goToNextPage}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 bg-slate-700 text-white rounded disabled:opacity-50"
+        >
+          Next
+        </button>
       </div>
 
       {/* Modal Preview */}
@@ -71,9 +119,8 @@ const Katalog = () => {
             <img
               src={currentImage}
               alt="Preview"
-              className="max-w-full max-h-full rounded-lg"
+              className="desktop:max-w-[50rem] hp:max-w-[20rem] desktop:max-h-[50rem] hp:max-h-[20rem] rounded-lg"
             />
-          
           </div>
         </div>
       )}

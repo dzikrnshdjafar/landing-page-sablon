@@ -6,9 +6,15 @@ import bgImage3 from "../assets/bgimage3.jpeg";
 
 import Cat from "../assets/cat.svg"
 
+
 const bgImages = [bgImage1, bgImage2, bgImage3];
 
 const Hero = () => {
+
+  const whatsappNumber = "628123456789"; // Ganti dengan nomor WhatsApp Anda
+    const message = "Halo, saya ingin bertanya tentang produk Anda!";
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const text = "Lorem Ipsum";
@@ -93,19 +99,19 @@ const Hero = () => {
             transition={{ delay: 1 }}
           >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,
-            cupiditate! Iste non temporibus molestias aperiam repellendus illum
-            eius earum molestiae doloribus vel at pariatur.
+            cupiditate! Iste non temporibus molestias aperiam repellendus illum.
           </motion.h3>
 
           {/* Button */}
-          <motion.button
-            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-orange-500 text-white text-sm tablet:text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
+          <motion.a
+            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-orange-400 text-white text-sm tablet:text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1 }}
+            href={whatsappLink}
           >
             Shop Now
-          </motion.button>
+          </motion.a>
         </div>
       </section>
 
