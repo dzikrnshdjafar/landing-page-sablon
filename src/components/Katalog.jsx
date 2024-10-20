@@ -8,12 +8,12 @@ import kaos5 from "../assets/kaos/kaos5.png";
 import kaos6 from "../assets/kaos/kaos6.png";
 import kaos7 from "../assets/kaos/kaos7.png";
 import kaos8 from "../assets/kaos/kaos8.png";
-import kaos9 from "../assets/kaos/kaos9.png";
+// import kaos9 from "../assets/kaos/kaos9.png";
 import kaos10 from "../assets/kaos/kaos10.png";
 import kaos11 from "../assets/kaos/kaos11.png";
 
 const Katalog = () => {
-  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos9, kaos10, kaos11];
+  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos10, kaos11];
   
   // State untuk mengontrol modal dan gambar yang sedang di-preview
   const [isOpen, setIsOpen] = useState(false);
