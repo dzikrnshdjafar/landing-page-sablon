@@ -3,11 +3,12 @@ import { useRef, useState, useEffect } from "react";
 import bgImage1 from "../assets/bgimage1.png";
 import bgImage2 from "../assets/bgimage2.jpeg";
 import bgImage3 from "../assets/bgimage3.jpeg";
+import bgImage4 from "../assets/bgimage4.jpg";
 
 import Cat from "../assets/cat.svg"
 
 
-const bgImages = [bgImage1, bgImage2, bgImage3];
+const bgImages = [bgImage1, bgImage2, bgImage3, bgImage4];
 
 const Hero = () => {
 

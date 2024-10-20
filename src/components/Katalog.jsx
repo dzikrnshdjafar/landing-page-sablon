@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Splash from "../assets/splash.png";
-import kaos1 from "../assets/kaos/kaos1.png";
-import kaos2 from "../assets/kaos/kaos2.png";
-import kaos3 from "../assets/kaos/kaos3.png";
-import kaos4 from "../assets/kaos/kaos4.png";
-import kaos5 from "../assets/kaos/kaos5.png";
-import kaos6 from "../assets/kaos/kaos6.png";
-import kaos7 from "../assets/kaos/kaos7.png";
-import kaos8 from "../assets/kaos/kaos8.png";
-// import kaos9 from "../assets/kaos/kaos9.png";
-import kaos10 from "../assets/kaos/kaos10.png";
-import kaos11 from "../assets/kaos/kaos11.png";
+import kaos1 from "../assets/kaos/kaos1.jpg";
+import kaos2 from "../assets/kaos/kaos2.jpg";
+import kaos3 from "../assets/kaos/kaos3.jpg";
+import kaos4 from "../assets/kaos/kaos4.jpg";
+import kaos5 from "../assets/kaos/kaos5.jpg";
+import kaos6 from "../assets/kaos/kaos6.jpg";
+import kaos7 from "../assets/kaos/kaos7.jpg";
+import kaos8 from "../assets/kaos/kaos8.jpg";
+import kaos9 from "../assets/kaos/kaos9.jpg";
+import kaos10 from "../assets/kaos/kaos10.jpg";
+// import kaos11 from "../assets/kaos/kaos11jpng";
 
 const Katalog = () => {
-  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos10, kaos11];
+  const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos8, kaos9, kaos10 ];
   
   // State untuk mengontrol modal dan gambar yang sedang di-preview
   const [isOpen, setIsOpen] = useState(false);
