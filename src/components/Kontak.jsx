@@ -18,7 +18,7 @@ const Kontak = () => {
       
       {/* Judul Section */}
       <motion.h2
-        className="text-4xl font-bold text-Neutral-900 mb-8"
+        className="text-7xl font-bold text-Neutral-900 text-center mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 50, duration: 1 }}

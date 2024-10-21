@@ -20,9 +20,6 @@ const Footer = () => {
           {/* Bagian untuk teks alamat dan logo media sosial */}
           <div className="flex flex-col items-center mb-6 space-y-4 px-20">
             {/* Alamat */}
-            <p className="text-lg text-surface text-slate-100">
-              123 Jalan Screen Printing, Jakarta, Indonesia
-            </p>
             <p className="text-xl font-semibold text-surface text-slate-100">
               Ikuti Kami :
             </p>
@@ -87,7 +84,11 @@ const Footer = () => {
 
               {/* Tambahkan ikon lain sesuai kebutuhan */}
             </div>
+            <p className="text-lg text-surface text-slate-100">
+              Jl Yarmouth Ave, Tsholotsho, Zimbabwe
+            </p>
           </div>
+
 
           {/* Bagian untuk iframe peta */}
           <div className="mb-6 w-full md:w-auto px-20 items-center flex justify-center">

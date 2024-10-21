@@ -18,13 +18,13 @@ export default {
     },
     colors: {
       'primary': '#171717',
-      'secondary': '#f5d0fe',
+      'secondary': '#fdba74',
       'sechov': '#f0abfc'
     },
+      fill: theme => ({
+        secondary: theme('colors.secondary')
+      }),
+
   },
-  },
-  plugins: [],
-  corePlugins: {
-    fill: true, // Aktifkan utilitas fill
   },
 }

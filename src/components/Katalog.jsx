@@ -68,7 +68,7 @@ const Katalog = () => {
         style={{ maxWidth: "100vw" }} // Mencegah melebar ke kanan
       />
 
-      <h2 className="text-4xl text-center font-semibold text-slate-200 z-20">
+      <h2 className="text-7xl text-center font-semibold text-slate-200 z-20">
         Katalog Produk
       </h2>
 
