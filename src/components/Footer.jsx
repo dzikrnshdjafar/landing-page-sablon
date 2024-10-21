@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center bg-neutral-900 text-center text-surface text-slate-100">
+    <footer className="flex flex-col items-center bg-primary text-center text-surface text-slate-100">
         <span className="p-10 text-4xl font-bold flex justify-center items-center w-full">
       Hello World!{" "}
       <motion.img

@@ -18,7 +18,7 @@ const Kontak = () => {
       
       {/* Judul Section */}
       <motion.h2
-        className="text-7xl font-bold text-Neutral-900 text-center mb-8"
+        className="lg:text-7xl hp:text-4xl font-bold text-primary text-center mb-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 50, duration: 1 }}
@@ -74,7 +74,7 @@ const Kontak = () => {
         {/* Tombol Kirim */}
         <motion.button
           type="submit"
-          className="w-full bg-secondary text-neutral-900 font-semibold py-2 rounded-md hover:bg-sechov transition-colors"
+          className="w-full bg-secondary text-primary font-semibold py-2 rounded-md hover:bg-sechov transition-colors"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

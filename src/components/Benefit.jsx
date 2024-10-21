@@ -36,8 +36,8 @@ const Benefit = () => {
 
   return (
 
-      <section id="benefit" className="lg:py-40 hp:py-20 flex flex-col items-center justify-center h-min-screen bg-neutral-900 text-slate-100 overflow-x-hidden">
-        <h2 className="text-7xl text-center font-semibold text-slate-200 z-20">Benefit</h2>
+      <section id="benefit" className="lg:py-40 hp:py-20 flex flex-col items-center justify-center h-min-screen bg-primary text-slate-100 overflow-x-hidden">
+        <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate-200 z-20">Benefit</h2>
 
         {cardData.map((card, index) => (
           <motion.div

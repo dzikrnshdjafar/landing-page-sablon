@@ -6,6 +6,7 @@ import Benefit from "./components/Benefit";
 import TshirtMarquee from "./components/TshirtMarquee";
 import WhatsappButton from "./components/WhatsappButton";
 import Footer from "./components/Footer";
+import PriceList from "./components/Pricelist";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Benefit/>
       <Katalog />
       {/* <TshirtMarquee/> */}
-      <Kontak />
+      {/* <Kontak /> */}
+      <PriceList/>
       <WhatsappButton/>
       <Footer/>
     </div>

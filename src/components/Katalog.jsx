@@ -11,8 +11,6 @@ import kaos8 from "../assets/kaos/kaos8.jpg";
 import kaos9 from "../assets/kaos/kaos9.jpg";
 import kaos10 from "../assets/kaos/kaos10.jpg";
 
-import bgKatalog from "../assets/bgkatalog.png"
-
 const Katalog = () => {
   const katalogs = [kaos1, kaos2, kaos3, kaos4, kaos5, kaos6, kaos7, kaos8, kaos9, kaos10 ];
   
@@ -58,7 +56,7 @@ const Katalog = () => {
   return (
     <section
       id="katalog"
-      className="relative px-4 md:px-10 lg:px-20 py-20 bg-neutral-900 overflow-hidden"
+      className="relative px-4 md:px-10 lg:px-20 py-20 bg-primary overflow-hidden"
     >
       {/* Gambar Splash */}
       <img
@@ -68,7 +66,7 @@ const Katalog = () => {
         style={{ maxWidth: "100vw" }} // Mencegah melebar ke kanan
       />
 
-      <h2 className="text-7xl text-center font-semibold text-slate-200 z-20">
+      <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate-200 z-20">
         Katalog Produk
       </h2>
 

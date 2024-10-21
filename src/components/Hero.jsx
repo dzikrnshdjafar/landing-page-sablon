@@ -50,7 +50,7 @@ const Hero = () => {
       <section
         ref={ref}
         id="home"
-        className="relative flex items-center justify-center w-full text-slate-100 bg-neutral-900 desktop:py-64 hp:py-20 laptop:px-12"
+        className="relative flex items-center justify-center w-full text-slate-100 bg-primary desktop:py-64 hp:py-20 laptop:px-12"
       >
         {/* Background Image Container */}
         <AnimatePresence>
@@ -105,7 +105,7 @@ const Hero = () => {
 
           {/* Button */}
           <motion.a
-            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-secondary text-neutral-900 text-sm tablet:text-lg font-semibold rounded-md hover:bg-sechov transition-colors"
+            className="px-4 py-2 tablet:px-6 tablet:py-3 bg-secondary text-primary text-sm tablet:text-lg font-semibold rounded-md hover:bg-sechov transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1 }}
