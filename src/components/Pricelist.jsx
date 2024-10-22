@@ -101,7 +101,7 @@ const PriceList = () => {
           </thead>
           <tbody>
             {currentItems.map((product) => (
-              <tr key={product.id} className="hover:bg-neutral-700">
+              <tr key={product.id} className="hover:bg-sechov">
                 <td className="px-4 py-4 text-center">{product.name}</td>
                 <td className="px-4 py-4 text-center">{`Rp${product.price.toLocaleString()}`}</td>
               </tr>
