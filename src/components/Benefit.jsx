@@ -14,7 +14,7 @@ const Benefit = () => {
   // Fungsi untuk menghasilkan objek animasi
   const createAnimation = (direction) => ({
     hidden: { 
-      x: direction === "left" ? "-60vw" : "60vw", 
+      x: direction === "left" ? "-20vw" : "20vw", 
       opacity: 0, 
       visibility: "hidden"
     },
@@ -36,14 +36,14 @@ const Benefit = () => {
 
   return (
 
-      <section id="benefit" className="lg:py-40 hp:py-20 flex flex-col items-center justify-center h-min-screen bg-primary text-slate-100 overflow-x-hidden">
-        <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate-200 z-20">Benefit</h2>
+      <section id="benefit" className="lg:py-40 hp:py-20 flex flex-col items-center justify-center h-min-screen bg-primary text-slate overflow-x-hidden">
+        <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate z-20">Benefit</h2>
 
         {cardData.map((card, index) => (
           <motion.div
           key={card.id}
           ref={refs[index]}
-          className={`hp:w-full tablet:w-1/2 laptop:w-1/3 ultrawide:w-1/2 h-full flex ${card.direction === "left" ? "flex-row ultrawide:mr-96" : "flex-row-reverse ultrawide:ml-96"} -py-40 `}
+          className={`hp:w-full tablet:w-full laptop:w-1/2 ultrawide:w-1/2 h-full flex ${card.direction === "left" ? "flex-row ultrawide:mr-[70vh] laptop:mr-[50vh]" : "flex-row-reverse ultrawide:ml-[70vh] laptop:ml-[50vh]"} -py-40 `}
           variants={createAnimation(card.direction)}
           initial="hidden"
           animate={isInView[index] ? "visible" : "hidden"}

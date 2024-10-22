@@ -72,7 +72,7 @@ const PriceList = () => {
 
 
       <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-primary z-20">
-        Daftar Harga Produk
+        Daftar Harga
       </h2>
 
       {/* Input pencarian */}
@@ -88,7 +88,7 @@ const PriceList = () => {
 
       {/* Tabel produk */}
       <div className="overflow-x-auto mt-10 items-center justify-center flex">
-        <table className="lg:min-w-[40rem] hp:min-w-full  bg-neutral-800 rounded-xl text-slate-200">
+        <table className="lg:min-w-[40rem] hp:min-w-full  bg-neutral-800 rounded-xl text-slate">
           <thead>
             <tr>
               <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort("name")}>

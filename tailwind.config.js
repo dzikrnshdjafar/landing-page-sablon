@@ -19,7 +19,8 @@ export default {
     colors: {
       'primary': '#171717',
       'secondary': '#fdba74',
-      'sechov': '#f0abfc'
+      'sechov': '#fb923c',
+      'slate': '#e2e8f0'
     },
       fill: theme => ({
         secondary: theme('colors.secondary')

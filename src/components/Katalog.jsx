@@ -66,7 +66,7 @@ const Katalog = () => {
         style={{ maxWidth: "100vw" }} // Mencegah melebar ke kanan
       />
 
-      <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate-200 z-20">
+      <h2 className="lg:text-7xl hp:text-4xl text-center font-semibold text-slate z-20">
         Katalog Produk
       </h2>
 
@@ -93,7 +93,7 @@ const Katalog = () => {
         >
           Previous
         </button>
-        <span className="text-slate-200">{`Page ${currentPage} of ${totalPages}`}</span>
+        <span className="text-slate">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
           onClick={goToNextPage}
           disabled={currentPage === totalPages}

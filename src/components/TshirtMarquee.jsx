@@ -16,7 +16,7 @@ const to = "-100%"
 
 const TshirtMarquee = () => {
   return (
-    <div className="mt-10 max-w-8xl h-[30rem] mx-auto bg-slate-200 rounded-xl shadow-lg overflow-hidden">
+    <div className="mt-10 max-w-8xl h-[30rem] mx-auto bg-slate rounded-xl shadow-lg overflow-hidden">
         <div className="p-6">
           <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
             T-Shirt Marquee

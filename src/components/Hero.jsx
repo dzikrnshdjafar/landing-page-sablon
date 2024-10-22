@@ -50,7 +50,7 @@ const Hero = () => {
       <section
         ref={ref}
         id="home"
-        className="relative flex items-center justify-center w-full text-slate-100 bg-primary desktop:py-64 hp:py-20 laptop:px-12"
+        className="relative flex items-center justify-center w-full text-slate bg-primary desktop:py-64 hp:py-20 laptop:px-12"
       >
         {/* Background Image Container */}
         <AnimatePresence>

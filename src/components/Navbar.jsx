@@ -62,7 +62,7 @@ const Navbar = () => {
   <a href="#benefit" onClick={(e) => handleScroll(e, 'benefit')} className="py-2 px-4 hover:text-gray-300 transition">Benefit</a>
   <a href="#katalog" onClick={(e) => handleScroll(e, 'katalog')} className="py-2 px-4 hover:text-gray-300 transition">Katalog</a>
   <a href="#pricelist" onClick={(e) => handleScroll(e, 'pricelist')} className="py-2 px-4 hover:text-gray-300 transition">Pricelist</a>
-  <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="py-2 px-4 hover:text-gray-300 transition">Kontak</a>
+  {/* <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="py-2 px-4 hover:text-gray-300 transition">Kontak</a> */}
 </div>
 
       </div>
